@@ -1,20 +1,32 @@
-name = "vpn"
+name = "vip"
 main = "build/worker/shim.mjs"
 compatibility_date = "2024-05-23"
 minify = true
+workers_dev = true
+
+routes = [
+  { pattern = "vip.mrkings.xyz", custom_domain = true },
+  { pattern = "ava.game.naver.com.vip.mrkings.xyz", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.vip.mrkings.xyz", custom_domain = true },
+  { pattern = "graph.instagram.com.vip.mrkings.xyz", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.vip.mrkings.xyz", custom_domain = true },
+  { pattern = "support.zoom.us.vip.mrkings.xyz", custom_domain = true },  
+  { pattern = "cache.netflix.com.vip.mrkings.xyz", custom_domain = true },
+]
 
 [[kv_namespaces]]
 binding = "SIREN"
 id = "ae470bca8dcc44a197a9bf76054190d6"
 
 [build]
-command = "cargo install worker-build && worker-build --release"
+command = "cargo install -q worker-build && worker-build --release"
 
 [env.dev]
-build = { command = "cargo install worker-build && worker-build --dev" }
+build = { command = "cargo install -q worker-build && worker-build --dev" }
 
 [vars]
 UUID = "aaaaaaa1-bbbb-4ccc-addd-eeeeeeeeeee1"
-MAIN_PAGE_URL = "https://raw.githubusercontent.com/clubgratis/Siren/refs/heads/master/web/index.html"
-SUB_PAGE_URL = "https://raw.githubusercontent.com/clubgratis/Siren/refs/heads/master/web/sub.html"
-LINK_PAGE_URL = "https://raw.githubusercontent.com/clubgratis/Siren/refs/heads/master/web/link.html"
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/clubgratis/vpn/refs/heads/master/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/clubgratis/vpn/refs/heads/master/web/sub.html"
+LINK_PAGE_URL = "https://raw.githubusercontent.com/clubgratis/vpn/refs/heads/master/web/link.html"
+CONVERTER_PAGE_URL = "https://raw.githubusercontent.com/clubgratis/vpn/refs/heads/master/web/converter.html"
