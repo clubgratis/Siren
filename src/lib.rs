@@ -39,7 +39,7 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
         .on_async("/", fe)
         .on_async("/sub", sub)
         .on_async("/link", link)  // Changed to on_async
-        .on_async("/gratis/:proxyip", tunnel)
+        .on_async("/Club-Gratis/:proxyip", tunnel)
         .run(req, env)
         .await
 }
